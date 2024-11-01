@@ -1,0 +1,42 @@
+module up_down_counter(
+    input button_up,
+    input button_down,
+    input button_reset,
+    input clk,
+    output [6:0] hex4,
+    output [6:0] hex5
+    );
+    
+    reg [7:0] count;
+    reg up,down,reset;
+    wire [3:0] tens,ones;
+    
+    always@(posedge clk)begin
+        up <= button_up;
+        down <= button_down;
+        reset <= button_reset;
+    end
+    
+    always@(posedge clk)begin
+        if(reset)
+            count <= 8'd0;
+        else if(up) begin
+            if(count == 8'd99)
+                count <= 8'd0;
+            else
+                count <= count + 1;
+        end
+        else if(down)begin
+            if(count == 8'd0)
+                count <= 8'd99;
+            else
+                count <= count - 1;
+        end
+    end
+    
+    assign tens = count / 10;
+    assign ones = count % 10;
+	 
+	 
+    
+endmodule
