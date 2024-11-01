@@ -1,0 +1,97 @@
+|up_down_counter
+button_up => always0.IN0
+button_up => always0.IN1
+button_down => always0.IN1
+button_down => always0.IN1
+button_reset => count.OUTPUTSELECT
+button_reset => count.OUTPUTSELECT
+button_reset => count.OUTPUTSELECT
+button_reset => count.OUTPUTSELECT
+button_reset => count.OUTPUTSELECT
+button_reset => count.OUTPUTSELECT
+button_reset => count.OUTPUTSELECT
+button_reset => count.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+button_reset => timer.OUTPUTSELECT
+clk => timer[0].CLK
+clk => timer[1].CLK
+clk => timer[2].CLK
+clk => timer[3].CLK
+clk => timer[4].CLK
+clk => timer[5].CLK
+clk => timer[6].CLK
+clk => timer[7].CLK
+clk => timer[8].CLK
+clk => timer[9].CLK
+clk => timer[10].CLK
+clk => timer[11].CLK
+clk => timer[12].CLK
+clk => timer[13].CLK
+clk => timer[14].CLK
+clk => timer[15].CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+hex4[0] <= hex_decoder:ones_place.segment
+hex4[1] <= hex_decoder:ones_place.segment
+hex4[2] <= hex_decoder:ones_place.segment
+hex4[3] <= hex_decoder:ones_place.segment
+hex4[4] <= hex_decoder:ones_place.segment
+hex4[5] <= hex_decoder:ones_place.segment
+hex4[6] <= hex_decoder:ones_place.segment
+hex5[0] <= hex_decoder:tens_place.segment
+hex5[1] <= hex_decoder:tens_place.segment
+hex5[2] <= hex_decoder:tens_place.segment
+hex5[3] <= hex_decoder:tens_place.segment
+hex5[4] <= hex_decoder:tens_place.segment
+hex5[5] <= hex_decoder:tens_place.segment
+hex5[6] <= hex_decoder:tens_place.segment
+
+
+|up_down_counter|hex_decoder:ones_place
+digit[0] => Decoder0.IN3
+digit[1] => Decoder0.IN2
+digit[2] => Decoder0.IN1
+digit[3] => Decoder0.IN0
+segment[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|up_down_counter|hex_decoder:tens_place
+digit[0] => Decoder0.IN3
+digit[1] => Decoder0.IN2
+digit[2] => Decoder0.IN1
+digit[3] => Decoder0.IN0
+segment[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
